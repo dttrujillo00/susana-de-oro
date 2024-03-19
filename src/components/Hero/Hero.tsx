@@ -14,6 +14,9 @@ export const Hero = () => {
           <p>y asegurando el futuro</p>
         </div>
       </div>
+
+      <i className="fa-solid fa-chevron-down fa-2xl arrow-down"></i>
+
     </div>
   )
 }

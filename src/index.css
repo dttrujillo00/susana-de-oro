@@ -26,6 +26,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   width: 100%;
   height: 50px;
   display: flex;
@@ -36,8 +37,45 @@ body {
 
 .nav h1 {
   margin-left: 1rem;
+  color: var(--text-color);
 }
 
 .nav i {
   margin-right: 1rem;
+}
+
+.list-nav {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, .9);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+}
+
+.list-nav.show {
+  z-index: 2;
+  left: 0;
+}
+
+.list-nav .close-menu {
+  color: white;
+  position: absolute;
+  top: 1.8rem;
+  right: .5rem;
+}
+
+.list-nav li {
+  margin-bottom: 1rem;
+}
+
+.list-nav li a {
+  color: white;
+  font-size: 1.5rem;
 }

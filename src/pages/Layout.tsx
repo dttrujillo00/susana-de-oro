@@ -1,29 +1,48 @@
+import { useState } from "react"
 import { Link, Outlet } from "react-router-dom"
 
 
 export const Layout = () => {
+
+  const [listNavClassName, setListNavClassName] = useState('list-nav')
+
+  const onShowMenu = () => {
+    setListNavClassName('list-nav show')
+  }
+
+  const onCloseMenu = () => {
+    setListNavClassName('list-nav')
+  }
+
   return (
     <div>
       <nav className="nav">
-        <h1>Susana de Oro</h1>
-        <i className="fa-solid fa-bars fa-xl"></i>
-        {/* <ul>
+
+        <Link to='/'>
+          <h1>Susana de Oro</h1>
+        </Link>
+
+        <i onClick={ onShowMenu } className="fa-solid fa-bars fa-xl"></i>
+
+        <ul className={ listNavClassName }>
+        <i onClick={ onCloseMenu } className="fa-solid fa-xmark fa-2xl close-menu"></i>
           <li>
-            <Link to='/'>Inicio</Link>
+            <Link onClick={ onCloseMenu } to='/'>Inicio</Link>
           </li>
           <li>
-            <Link to='/'>Servicios</Link>
+            <Link onClick={ onCloseMenu } to='/'>Servicios</Link>
           </li>
           <li>
-            <Link to='/'>Contacto</Link>
+            <Link onClick={ onCloseMenu } to='/'>Contacto</Link>
           </li>
           <li>
-            <Link to='/about'>¿Quién soy?</Link>
+            <Link onClick={ onCloseMenu } to='/about'>¿Quién soy?</Link>
           </li>
           <li>
-            <Link to='/about'>Actualidad</Link>
+            <Link onClick={ onCloseMenu } to='/about'>Actualidad</Link>
           </li>
-        </ul> */}
+        </ul>
+
       </nav>
 
       <Outlet />
