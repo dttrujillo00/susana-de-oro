@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
+import { WhatsAppBubble } from "../components";
 
 
 export const Layout = () => {
@@ -62,6 +63,8 @@ export const Layout = () => {
         </ul>
 
       </nav>
+
+      <WhatsAppBubble />
 
       <Outlet />
     </div>
