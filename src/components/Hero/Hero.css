@@ -1,0 +1,66 @@
+.hero {
+    background-image: url('/habana-background.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text-container {
+    color: white;
+    transform: translateY(6rem);
+    padding: 0 1rem;
+    background-color: rgba(0, 0, 0, .3);
+    font-size: 1.8rem;
+    height: 135px;
+    overflow: hidden;
+}
+
+.hero-text-container p {
+    text-wrap: wrap;
+}
+
+.typed-out {
+    overflow: hidden;
+    border-right: .15rem solid transparent;
+    white-space: nowrap;
+    animation: typing 1.5s steps(25, end) forwards;
+    width: 0;
+}
+
+.typed-out.delayed {
+    animation: typing 1.5s steps(25, end) forwards 1.5s;
+}
+
+.typed-out.delayed2 {
+    animation: typing 1.5s steps(25, end) forwards 3s, blinking .8s infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+        border-right-color: orange;
+    }
+    
+    98% {
+        width: 100%;
+        border-right-color: orange;
+    }
+    
+    100% {
+        width: 100%;
+        border-right-color: transparent;
+    }
+}
+
+@keyframes blinking {
+    from {
+        border-color: transparent;
+    }
+
+    to {
+        border-color: orange;
+    }
+}
