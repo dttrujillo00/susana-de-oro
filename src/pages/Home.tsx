@@ -1,9 +1,13 @@
-import { Hero } from "../components"
+import { Hero, Servicios } from "../components"
 
 
 
 export const Home = () => {
+
   return (
-    <Hero />
+    <div className="home-container">
+      <Hero />
+      <Servicios />
+    </div>
   )
 }

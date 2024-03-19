@@ -37,10 +37,11 @@ body {
 
 .nav h1 {
   margin-left: 1rem;
-  color: var(--text-color);
+  color: white;
 }
 
 .nav i {
+  color: white;
   margin-right: 1rem;
 }
 
@@ -78,4 +79,9 @@ body {
 .list-nav li a {
   color: white;
   font-size: 1.5rem;
+}
+
+.home-container {
+  height: 100vh;
+  overflow-y: scroll;
 }
