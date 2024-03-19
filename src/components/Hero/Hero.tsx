@@ -1,6 +1,14 @@
 import './Hero.css'
 
 export const Hero = () => {
+
+  const onHandleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight - 50,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <div className='hero'>
       <div className="hero-text-container">
@@ -15,7 +23,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <i className="fa-solid fa-chevron-down fa-2xl arrow-down"></i>
+      <i onClick={ onHandleScroll } className="fa-solid fa-chevron-down fa-2xl arrow-down"></i>
 
     </div>
   )
