@@ -33,6 +33,13 @@ body {
   justify-content: space-between;
   align-items: center;
   color: var(--text-color);
+  transition: all .3s;
+}
+
+.nav.background {
+  background-image: url('/habana-background.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .nav h1 {
@@ -80,8 +87,3 @@ body {
   color: white;
   font-size: 1.5rem;
 }
-
-/* .home-container {
-  height: 100vh;
-  overflow-y: scroll;
-} */

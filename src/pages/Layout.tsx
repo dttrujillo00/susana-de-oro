@@ -1,22 +1,40 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
 
 
 export const Layout = () => {
 
-  const [listNavClassName, setListNavClassName] = useState('list-nav')
+  const [listNavClassName, setListNavClassName] = useState('list-nav');
+  const [navClassName, setNavClassName] = useState('nav');
+
+  useEffect(() => {
+    window.addEventListener('scroll', onNavBackground );
+  
+    return () => {
+      window.removeEventListener('scroll', onNavBackground);
+    }
+  }, [])
+  
 
   const onShowMenu = () => {
-    setListNavClassName('list-nav show')
+    setListNavClassName('list-nav show');
   }
 
   const onCloseMenu = () => {
-    setListNavClassName('list-nav')
+    setListNavClassName('list-nav');
+  }
+
+  const onNavBackground = () => {
+    if (window.scrollY >= window.innerHeight - 50) {
+      setNavClassName('nav background');
+    } else {
+      setNavClassName('nav');
+    }
   }
 
   return (
     <div>
-      <nav className="nav">
+      <nav className={ navClassName }>
 
         <Link to='/'>
           <h1>Susana de Oro</h1>
