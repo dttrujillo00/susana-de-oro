@@ -4,7 +4,7 @@ export const Hero = () => {
 
   const onHandleScroll = () => {
     window.scrollTo({
-      top: window.innerHeight - 50,
+      top: window.innerHeight,
       behavior: 'smooth'
     })
   }
