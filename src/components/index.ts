@@ -1,3 +1,5 @@
 export * from './Hero/Hero'
 export * from './Servicios/Servicios'
 export * from './WhatsAppBubble/WhatsAppBubble'
+export * from './ContainerHomeContent/ContainerHomeContent'
+export * from './FormContact/FormContact'
