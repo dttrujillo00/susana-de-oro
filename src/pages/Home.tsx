@@ -1,4 +1,4 @@
-import { Hero, Servicios, ContainerHomeContent, FormContact } from "../components"
+import { Hero, Servicios, ContainerHomeContent, FormContact, Whoami } from "../components"
 
 export const Home = () => {
 
@@ -8,6 +8,7 @@ export const Home = () => {
       <ContainerHomeContent>
         <Servicios />
         <FormContact />
+        <Whoami />
       </ContainerHomeContent>
     </div>
   )

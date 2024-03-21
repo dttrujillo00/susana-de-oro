@@ -22,13 +22,7 @@
 .fa-gavel,
 .fa-file-signature,
 .fa-scale-balanced {
-    height: 2rem;
-    line-height: 2rem;
-    background-color: rgb(103, 100, 100);
-    /* background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%); */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: .5rem;
+    color: rgb(103, 100, 100);
+    margin-bottom: 1.2rem;
     display: ruby-text;
 }

@@ -21,6 +21,10 @@ body {
   z-index: 1;
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
 .nav {
   position: fixed;
   top: 0;

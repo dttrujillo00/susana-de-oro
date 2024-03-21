@@ -24,7 +24,6 @@ export const Layout = () => {
   const onCloseMenu = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setListNavClassName('list-nav');
-    console.log(document.querySelector(`.${e.target.id}`))
     document.querySelector(`.${e.target.id}`)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -58,7 +57,7 @@ export const Layout = () => {
             <Link onClick={ onCloseMenu } to='/' id="form-section">Contacto</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="quiensoy">¿Quién soy?</Link>
+            <Link onClick={ onCloseMenu } to='/' id="whoami">¿Quién soy?</Link>
           </li>
           <li>
             <Link onClick={ onCloseMenu } to='/' id="actualidad">Actualidad</Link>

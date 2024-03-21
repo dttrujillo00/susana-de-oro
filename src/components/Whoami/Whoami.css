@@ -1,0 +1,45 @@
+.whoami {
+    position: relative;
+}
+
+.whoami .bg-image {
+    background-image: url('/public/ProfilePictureSusy.png');
+    filter: blur(5px);
+    -webkit-filter: blur(1px);
+    height: 200px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: relative; */
+}
+
+.whoami .bg-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.whoami h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.whoami .whoami-content {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    color: rgb(54, 52, 52);
+}
+
+.whoami .whoami-content p {
+    text-wrap:pretty;
+}
