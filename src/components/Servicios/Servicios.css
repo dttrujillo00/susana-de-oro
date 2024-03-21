@@ -6,14 +6,29 @@
 .servicios-container h2 {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
 .servicios-container h3 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .servicios-container .servicio-card {
     margin-bottom: 1.5rem;
     padding: .5rem;
+}
+
+.fa-gavel,
+.fa-file-signature,
+.fa-scale-balanced {
+    height: 2rem;
+    line-height: 2rem;
+    background-color: rgb(103, 100, 100);
+    /* background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%); */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: .5rem;
+    display: ruby-text;
 }
