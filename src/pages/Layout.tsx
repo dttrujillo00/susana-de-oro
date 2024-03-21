@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
 import { WhatsAppBubble } from "../components";
 
@@ -21,8 +21,11 @@ export const Layout = () => {
     setListNavClassName('list-nav show');
   }
 
-  const onCloseMenu = () => {
+  const onCloseMenu = (e: React.SyntheticEvent) => {
+    e.preventDefault();
     setListNavClassName('list-nav');
+    console.log(document.querySelector(`.${e.target.id}`))
+    document.querySelector(`.${e.target.id}`)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const onNavBackground = () => {
@@ -46,19 +49,19 @@ export const Layout = () => {
         <ul className={ listNavClassName }>
         <i onClick={ onCloseMenu } className="fa-solid fa-xmark fa-2xl close-menu"></i>
           <li>
-            <Link onClick={ onCloseMenu } to='/'>Inicio</Link>
+            <Link onClick={ onCloseMenu } to='/' id="hero">Inicio</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/'>Servicios</Link>
+            <Link onClick={ onCloseMenu } to='/' id="servicios-container">Servicios</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/'>Contacto</Link>
+            <Link onClick={ onCloseMenu } to='/' id="form-section">Contacto</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/about'>¿Quién soy?</Link>
+            <Link onClick={ onCloseMenu } to='/' id="quiensoy">¿Quién soy?</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/about'>Actualidad</Link>
+            <Link onClick={ onCloseMenu } to='/' id="actualidad">Actualidad</Link>
           </li>
         </ul>
 
