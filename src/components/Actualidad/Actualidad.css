@@ -1,4 +1,10 @@
+.actualidad {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .actualidad h2 {
     text-align: center;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }

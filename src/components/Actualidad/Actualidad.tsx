@@ -1,9 +1,18 @@
+import { news } from '../../data/news'
+import { NewsCard } from '../NewsCard/NewsCard'
 import  './Actualidad.css'
 
 export const Actualidad = () => {
+
   return (
-    <div className='actualidad'>
+    <section className='actualidad'>
         <h2>Actualidad</h2>
-    </div>
+
+        {
+          news.map( ({ id, title, body }) => (
+            <NewsCard key={ id } title={ title } body={ body } />
+          ) )
+        }
+    </section>
   )
 }

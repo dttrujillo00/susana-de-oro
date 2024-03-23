@@ -24,7 +24,7 @@ export const Layout = () => {
   const onCloseMenu = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setListNavClassName('list-nav');
-    document.querySelector(`.${e.target.id}`)?.scrollIntoView({ behavior: 'smooth' })
+    // document.querySelector(`.${e.target.id}`)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const onNavBackground = () => {
