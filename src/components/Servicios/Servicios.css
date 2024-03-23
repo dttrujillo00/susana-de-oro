@@ -17,6 +17,9 @@
 .servicios-container .servicio-card {
     margin-bottom: 1.5rem;
     padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fa-gavel,
@@ -24,5 +27,4 @@
 .fa-scale-balanced {
     color: rgb(103, 100, 100);
     margin-bottom: 1.2rem;
-    display: ruby-text;
 }
