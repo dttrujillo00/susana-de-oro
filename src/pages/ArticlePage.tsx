@@ -13,9 +13,6 @@ export const ArticlePage = () => {
 
     const articleId = getIdFromLocation(pathname);
     getArticle(articleId)
-    // setArticle(article)
-    
-    
   
   }, [])
   
@@ -26,10 +23,8 @@ export const ArticlePage = () => {
     return id;
   }
 
-  const getArticle = async(articleId: string) => {
-    setArticle( await getNewById(articleId))
-    // const article = await getNewById(articleId)
-    // return article;
+  const getArticle = async(articleId: string) => { 
+    setArticle(await getNewById(articleId))
   }
 
   console.log(article)
