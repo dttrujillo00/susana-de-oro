@@ -1,4 +1,4 @@
-import { Hero, Servicios, ContainerHomeContent, FormContact, Whoami, Actualidad } from "../components"
+import { Hero, Servicios, ContainerHomeContent, FormContact, Whoami, Actualidad, WhatsAppBubble } from "../components"
 
 export const Home = () => {
 
@@ -10,6 +10,7 @@ export const Home = () => {
         <FormContact />
         <Whoami />
         <Actualidad />
+        <WhatsAppBubble />
       </ContainerHomeContent>
     </div>
   )

@@ -1,3 +1,4 @@
+import { Article } from "../interfaces/article";
 
 
 export const getNews = async () => {

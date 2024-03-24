@@ -1,17 +1,45 @@
-import { Route, Routes } from "react-router-dom"
-import { About, Home, Layout } from "./pages"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { ArticlePage, Dashboard, Home, Layout } from "./pages"
 
 
 export const App = () => {
+
+  const router =createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />
+        },
+        {
+          path: 'article/:id',
+          element: <ArticlePage />
+        },
+        {
+          path: 'dashboard',
+          element: <Dashboard />
+        },
+        {
+          path: '*',
+          element: <Home />
+        }
+      ]
+    }
+  ])
+
   return (
-    <>
-        <Routes>
-            <Route path="/" element={ <Layout /> }>
-                <Route index element={ <Home /> } />
-                <Route path="about" element={ <About /> } />
-                <Route path="*" element={ <Layout /> } />
-            </Route>
-        </Routes>
-    </>
+    <RouterProvider router={ router } />
+    // <>
+    //     <Routes>
+    //         <Route path="/" element={ <Layout /> } loader={ layoutLoader } >
+    //             <Route index element={ <Home /> } />
+    //             <Route path="article/:id" element={ <ArticlePage /> } />
+    //             <Route path="dashboard" element={ <Dashboard /> } />
+    //             <Route path="*" element={ <Layout /> } />
+    //         </Route>
+    //     </Routes>
+    // </>
   )
 }

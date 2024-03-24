@@ -5,6 +5,10 @@
     max-height: 150px;
 }
 
+.news-card a {
+    color: black;
+}
+
 .news-card h3 {
     font-size: 1.4rem;
 }

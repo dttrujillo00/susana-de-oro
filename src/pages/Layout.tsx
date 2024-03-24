@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
-import { WhatsAppBubble } from "../components";
+
 
 
 export const Layout = () => {
@@ -24,7 +24,7 @@ export const Layout = () => {
   const onCloseMenu = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setListNavClassName('list-nav');
-    document.querySelector(`.${(e.target as any).id}`)?.scrollIntoView({ behavior: 'smooth' })
+    document.querySelector(`.${e.currentTarget.id}`)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const onNavBackground = () => {
@@ -65,8 +65,6 @@ export const Layout = () => {
         </ul>
 
       </nav>
-
-      <WhatsAppBubble />
 
       <Outlet />
     </div>

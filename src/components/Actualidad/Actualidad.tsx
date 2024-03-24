@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react'
 import { getNews } from '../../services/getNews'
 import { NewsCard } from '../NewsCard/NewsCard'
 import  './Actualidad.css'
+import { Article } from '../../interfaces/article';
+
+
 
 export const Actualidad = () => {
 
-    const [news, setNews] = useState([])
+    const [news, setNews] = useState<Article[]>([])
 
     useEffect(() => {
       loadNews()
@@ -22,11 +25,11 @@ export const Actualidad = () => {
         <h2>Actualidad</h2>
 
         {
-          news.map( ({ id, title, body }) => (
-            <>
+          news?.map( ( article ) => (
+            <div key={article.id}>
               <hr />
-              <NewsCard key={ id } title={ title } body={ body } />
-            </>
+              <NewsCard {...article} />
+            </div>
           ) )
         }
 
