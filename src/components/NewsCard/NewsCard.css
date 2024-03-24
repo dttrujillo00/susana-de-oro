@@ -1,16 +1,16 @@
 .news-card {
-    margin-bottom: 2rem;
-    border: 1px solid gray;
-    border-radius: 8px;
-    padding: 1rem;
+    width: 90%;
+    margin: auto;
+    padding-top: 1.5rem;
     max-height: 150px;
 }
 
-.news-card hr {
-    margin: .5rem 0;
+.news-card h3 {
+    font-size: 1.4rem;
 }
 
 .news-card p {
+    margin: 1rem 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

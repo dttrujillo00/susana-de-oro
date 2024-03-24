@@ -23,7 +23,10 @@ export const Actualidad = () => {
 
         {
           news.map( ({ id, title, body }) => (
-            <NewsCard key={ id } title={ title } body={ body } />
+            <>
+              <hr />
+              <NewsCard key={ id } title={ title } body={ body } />
+            </>
           ) )
         }
 
