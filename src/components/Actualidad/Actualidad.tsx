@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
-import { getNews } from '../../services/getNews'
-import { NewsCard } from '../NewsCard/NewsCard'
+import { getArticles } from '../../services/getArticles'
+import { ArticleCard } from '../ArticleCard/ArticleCard'
+import { Article } from '../../interfaces';
 import  './Actualidad.css'
-import { Article } from '../../interfaces/article';
 
 
 
 export const Actualidad = () => {
 
-    const [news, setNews] = useState<Article[]>([])
+    const [articles, setArticles] = useState<Article[]>([])
 
     useEffect(() => {
-      loadNews()
+      loadArticles()
     }, [])
     
 
-    const loadNews = async () => {
-      setNews(await getNews())
+    const loadArticles = async () => {
+      setArticles(await getArticles())
     }
 
 
@@ -25,10 +25,10 @@ export const Actualidad = () => {
         <h2>Actualidad</h2>
 
         {
-          news?.map( ( article ) => (
+          articles?.map( ( article ) => (
             <div key={article.id}>
               <hr />
-              <NewsCard {...article} />
+              <ArticleCard {...article} />
             </div>
           ) )
         }

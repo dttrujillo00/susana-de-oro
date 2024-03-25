@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom"
-import { getNewById } from "../services/getNewById";
+import { getArticleById } from "../services/getArticleById";
 import { useEffect, useState } from "react";
 import { Article } from "../interfaces/article";
 
@@ -24,7 +24,7 @@ export const ArticlePage = () => {
   }
 
   const getArticle = async(articleId: string) => { 
-    setArticle(await getNewById(articleId))
+    setArticle(await getArticleById(articleId))
   }
 
   console.log(article)

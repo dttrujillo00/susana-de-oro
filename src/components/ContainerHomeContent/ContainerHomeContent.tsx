@@ -1,11 +1,7 @@
-import React from 'react'
+import { Children } from '../../interfaces'
 import './ContainerHomeContent.css'
 
-interface Props {
-    children: React.ReactNode;
-}
-
-export const ContainerHomeContent = ({ children }:Props) => {
+export const ContainerHomeContent = ({ children }:Children) => {
   return (
     <div className='home-content-container'>
         {

@@ -1,7 +1,7 @@
-import { Article } from "../interfaces/article";
+import { Article } from "../interfaces";
 
 
-export const getNews = async (): Promise<Article[]> => {
+export const getArticles = async (): Promise<Article[]> => {
     
     const response = await fetch('https://server-susana-de-oro.onrender.com/news')
     const { body } = await response.json()

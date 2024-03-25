@@ -1,7 +1,12 @@
+import { Children } from '../../interfaces';
 import './ArticlesContainer.css'
 
-export const ArticlesContainer = () => {
+export const ArticlesContainer = ({ children }:Children) => {
   return (
-    <div>ArticlesContainer</div>
+    <div>
+      {
+        children
+      }
+    </div>
   )
 }
