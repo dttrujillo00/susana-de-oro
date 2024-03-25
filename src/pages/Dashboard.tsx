@@ -1,18 +1,14 @@
 import { ArticlesContainer } from "../components"
 
 
-export const Dashboard = () => {
-
-  
+export const Dashboard = () => {  
 
   return (
     <div className="dashboard-container">
-      <h1>Dashboard Page</h1>
-      <ArticlesContainer>
-        <div>
 
-        </div>
-      </ArticlesContainer>
+      <h1>Dashboard Page</h1>
+      <ArticlesContainer />
+
     </div>
   )
 }

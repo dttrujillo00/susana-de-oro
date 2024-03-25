@@ -1,37 +1,17 @@
-import { useEffect, useState } from 'react'
-import { getArticles } from '../../services/getArticles'
-import { ArticleCard } from '../ArticleCard/ArticleCard'
-import { Article } from '../../interfaces';
+import { ArticlesContainer } from '../ArticlesContainer/ArticlesContainer';
 import  './Actualidad.css'
 
 
 
 export const Actualidad = () => {
 
-    const [articles, setArticles] = useState<Article[]>([])
 
-    useEffect(() => {
-      loadArticles()
-    }, [])
-    
-
-    const loadArticles = async () => {
-      setArticles(await getArticles())
-    }
-
-
+// TODO: se puede aislar el codigo de obtener los articulos dado que tambien se utiliza en el dashboard
   return (
     <section className='actualidad'>
+      
         <h2>Actualidad</h2>
-
-        {
-          articles?.map( ( article ) => (
-            <div key={article.id}>
-              <hr />
-              <ArticleCard {...article} />
-            </div>
-          ) )
-        }
+        <ArticlesContainer />
 
     </section>
   )
