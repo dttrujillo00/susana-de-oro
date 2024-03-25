@@ -21,7 +21,7 @@
 }
 
 .form input, .form textarea {
-    margin-bottom: .6rem;
+    margin-bottom: 1rem;
     padding: .5rem;
     border: none;
     /* border: 2px solid lightskyblue; */
@@ -37,10 +37,12 @@
     background: radial-gradient(circle, rgba(87,184,184,1) 0%, rgba(39,125,120,1) 100%);
     border: none;
     padding: .5rem 0;
+    margin-top: 1rem;
     border-radius: 5px;
 }
 
-.form button span {
+.form button span,
+.form button {
     font-weight: bold;
     color: white;
     font-size: 1.1rem;

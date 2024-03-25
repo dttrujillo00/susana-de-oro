@@ -27,9 +27,7 @@ export const FormContact = () => {
         <form className='form' ref={ form } onSubmit={ sendEmail }>
             <input type="text" name='user_name' placeholder='Ingrese su nombre*' autoComplete='off' required />
             <input type="email" name='user_email' placeholder='correo@email.com*' autoComplete='off' required />
-            <textarea name="message" placeholder='Deja tu mensaje por aquí*' required>
-
-            </textarea>
+            <textarea name="message" placeholder='Deja tu mensaje por aquí*' required></textarea>
 
             <button type="submit">
                 <span>Enviar <i className='fa-regular fa-paper-plane'></i> </span>

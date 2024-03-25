@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { ArticlePage, Dashboard, Home, Layout } from "./pages"
+import { ArticlePage, Dashboard, Home, Layout, LoginPage } from "./pages"
 
 
 export const App = () => {
@@ -20,6 +20,10 @@ export const App = () => {
         {
           path: 'dashboard',
           element: <Dashboard />
+        },
+        {
+          path: '/login',
+          element: <LoginPage />
         },
         {
           path: '*',
