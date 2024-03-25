@@ -31,15 +31,5 @@ export const App = () => {
 
   return (
     <RouterProvider router={ router } />
-    // <>
-    //     <Routes>
-    //         <Route path="/" element={ <Layout /> } loader={ layoutLoader } >
-    //             <Route index element={ <Home /> } />
-    //             <Route path="article/:id" element={ <ArticlePage /> } />
-    //             <Route path="dashboard" element={ <Dashboard /> } />
-    //             <Route path="*" element={ <Layout /> } />
-    //         </Route>
-    //     </Routes>
-    // </>
   )
 }
