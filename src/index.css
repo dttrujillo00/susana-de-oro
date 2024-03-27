@@ -20,6 +20,12 @@ body {
   z-index: 1;
 }
 
+/* TEMPORAL */
+p {
+  color: white;
+}
+/* TEMPORAL */
+
 section {
   margin-bottom: 2rem;
 }
@@ -138,3 +144,4 @@ LOGIN STYLES
   font-size: 2rem;
   text-shadow: 1px 1px 1px gray;
 }
+

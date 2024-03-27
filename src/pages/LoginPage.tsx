@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from "react"
-import { User } from "../interfaces/user"
-import { verifylogin } from "../services/verifyLogin"
+// import { User } from "../interfaces/user"
+// import { verifylogin } from "../services/verifyLogin"
+import { Form, useActionData, useLocation, useNavigation } from "react-router-dom"
 
 
 export const LoginPage = () => {
@@ -8,23 +9,32 @@ export const LoginPage = () => {
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     
-    const onHandleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => { 
+    // const onHandleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => { 
 
-        e.preventDefault();
+    //     e.preventDefault();
 
-        const formData: User = {
-            username,
-            password,
-        }
+    //     const formData: User = {
+    //         username,
+    //         password,
+    //     }
 
-        const loginInfo = await verifylogin(formData);
+    //     const loginInfo = await verifylogin(formData);
 
-        if (loginInfo.body) {
-            console.log('Login OK')
-        } else {
-            console.log('Login ERROR')
-        }
-     }
+    //     if (loginInfo.body) {
+    //         console.log('Login OK')
+    //     } else {
+    //         console.log('Login ERROR')
+    //     }
+    //  }
+
+    let location = useLocation();
+    let params = new URLSearchParams(location.search);
+    let from = params.get('from') || '/';
+
+    let navigation = useNavigation();
+    let isLogginIn = navigation.formData?.get('username') != null;
+
+    let acionData = useActionData() as { error: string } | undefined;
 
      const onUsernameChange = (e: SyntheticEvent<HTMLInputElement>) => { 
         setUsername(e.currentTarget.value)
@@ -41,11 +51,17 @@ export const LoginPage = () => {
         <div className="login-container">
             <h1>Login</h1>
 
-            <form className="form" onSubmit={ onHandleSubmit }>
-                <input value={ username } onChange={ onUsernameChange } type="text" placeholder="Ingrese su usuario" />
-                <input value={ password } onChange={ onPasswordChange } type="password" placeholder="Ingrese su contraseña" />
-                <button type="submit">Iniciar Sesión</button>
-            </form>
+            <Form className="form" method="post" replace>
+                <input type="hidden" name="redirectTo" value={ from } />
+                <input name="username" value={ username } onChange={ onUsernameChange } type="text" placeholder="Ingrese su usuario" />
+                <input name="password" value={ password } onChange={ onPasswordChange } type="password" placeholder="Ingrese su contraseña" />
+                <button type="submit" disabled={ isLogginIn } >
+                    { isLogginIn ? 'Iniciando Sesión...' : 'Iniciar Sesión' }
+                </button>
+                { acionData && acionData.error ? (
+                    <p style={{ color: 'red' }} >{ acionData.error }</p>
+                ) : null }
+            </Form>
         </div>
     </div>
   )

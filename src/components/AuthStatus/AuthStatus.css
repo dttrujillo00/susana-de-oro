@@ -1,0 +1,4 @@
+.auth-status p,
+.auth-status button {
+  color: red;
+}

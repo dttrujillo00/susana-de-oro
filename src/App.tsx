@@ -1,12 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom"
 import { ArticlePage, Dashboard, Home, Layout, LoginPage } from "./pages"
-import { AuthProvider } from "./auth/AuthProvider"
+import { AuthProvider, loginAction, loginLoader, protectedLoader } from "./auth";
 
 
 export const App = () => {
 
   const router =createBrowserRouter([
     {
+      id: 'root',
       path: '/',
       loader() {
         return { user: AuthProvider.username }
@@ -22,22 +23,32 @@ export const App = () => {
           element: <ArticlePage />
         },
         {
-          path: 'dashboard',
-          element: <Dashboard />
+          path: '/login',
+          action: loginAction,
+          loader: loginLoader,
+          element: <LoginPage />
         },
         {
-          path: '/login',
-          element: <LoginPage />
+          path: 'dashboard',
+          loader: protectedLoader,
+          element: <Dashboard />
         },
         {
           path: '*',
           element: <Home />
         }
-      ]
-    }
-  ])
+      ],
+    },
+    {
+      path: '/logout',
+      async action() {
+        await AuthProvider.signout();
+        return redirect('/');
+      },
+    },
+  ]);
 
   return (
-    <RouterProvider router={ router } />
+    <RouterProvider router={ router } fallbackElement={ <p>Initial Load...</p> } />
   )
 }
