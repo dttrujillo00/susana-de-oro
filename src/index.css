@@ -20,12 +20,6 @@ body {
   z-index: 1;
 }
 
-/* TEMPORAL */
-p {
-  color: white;
-}
-/* TEMPORAL */
-
 section {
   margin-bottom: 2rem;
 }
@@ -135,6 +129,7 @@ LOGIN STYLES
   background-color: rgba(255, 255, 255, .2);
   border-radius: .5rem;
   padding: 1rem;
+  position: relative;
 }
 
 .login-page h1 {

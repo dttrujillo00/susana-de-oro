@@ -10,7 +10,7 @@ export const loginAction = async ({ request }: LoaderFunctionArgs) => {
     // Validate our form inputs and return validation error via useActionData()
     if (!username) {
         return {
-            error: "Debes proveer un nombre de usuario para iniciar sesión",
+            error: "Debes proveer un usuario para iniciar sesión",
         };
     }
 
@@ -22,7 +22,12 @@ export const loginAction = async ({ request }: LoaderFunctionArgs) => {
 
     // Sign in and redirect to the proper destination if successful
     try {
-        await AuthProvider.signin(username, password)
+        const isSigned = await AuthProvider.signin(username, password)
+        if (!isSigned) {
+            return {
+                error: 'Credenciales incorrectas!'
+            }
+        }
     } catch (error) {
         return {
             error: 'Inicio de sesión inválido'
