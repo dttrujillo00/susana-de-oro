@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ArticlePage, Dashboard, Home, Layout, LoginPage } from "./pages"
+import { AuthProvider } from "./auth/AuthProvider"
 
 
 export const App = () => {
@@ -7,6 +8,9 @@ export const App = () => {
   const router =createBrowserRouter([
     {
       path: '/',
+      loader() {
+        return { user: AuthProvider.username }
+      },
       element: <Layout />,
       children: [
         {
