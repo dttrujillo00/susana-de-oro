@@ -16,10 +16,10 @@ export const Hero = () => {
           <h2>Asesoría Legal</h2>
         </div>
         <div className="typed-out delayed">
-          <p>Protegiendo el presente</p>
+          <p>"Protegiendo el presente</p>
         </div>
         <div className="typed-out delayed2">
-          <p>y asegurando el futuro</p>
+          <p>y asegurando el futuro"</p>
         </div>
       </div>
 
