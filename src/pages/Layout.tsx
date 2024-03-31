@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
-import { AuthStatus } from "../components";
 
 
 
@@ -63,9 +62,6 @@ export const Layout = () => {
           </li>
           <li>
             <Link onClick={ onCloseMenu } to='/' id="actualidad">Actualidad</Link>
-          </li>
-          <li>
-            <AuthStatus />
           </li>
         </ul>
 
