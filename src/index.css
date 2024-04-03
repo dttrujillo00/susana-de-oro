@@ -40,7 +40,7 @@ section {
 }
 
 .nav.background {
-  background-image: url('/habana-background.jpg');
+  background-image: url('/img/habana-background.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -48,6 +48,7 @@ section {
 .nav h1 {
   margin-left: 1rem;
   color: white;
+  text-shadow: 1px 1px 3px rgb(44, 43, 43);
 }
 
 .nav i {
@@ -140,3 +141,34 @@ LOGIN STYLES
   text-shadow: 1px 1px 1px gray;
 }
 
+/***************** 
+    RESPONSIVE
+*****************/
+
+@media (width >= 1024px) {
+  .fa-bars,
+  .fa-xmark {
+    display: none;
+  }
+
+  .list-nav {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  .list-nav li {
+    margin-bottom: 0;
+    margin: 0 1rem;
+  }
+
+  .list-nav li a {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-underline-offset: .3rem;
+    text-decoration-color: rgb(96, 203, 249);
+    text-shadow: 1px 1px 3px rgb(44, 43, 43);
+  }
+}

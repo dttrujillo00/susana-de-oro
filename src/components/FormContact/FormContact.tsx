@@ -1,22 +1,27 @@
 import emailjs from '@emailjs/browser'
 import './FormContact.css'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { Notification } from '../Notification/Notification';
 
 export const FormContact = () => {
 
     const form = useRef<HTMLFormElement>(null);
+    const [isSending, setIsSending] = useState<boolean>(false);
+    const [isSent, setIsSent] = useState<boolean>(false);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) : void => {
         event.preventDefault();
+        setIsSending(true);
 
         emailjs.sendForm('service_kaurhwp', 'contact_form', event.currentTarget, {
             publicKey: '6vBOL4XQ5xIp85Xis'
         })
         .then( () => {
-            console.log('Correo enviado')
+            setIsSending(false);
+            setIsSent(true);
             form.current?.reset();
         }, (error) => {
-            console.error("ERROR " + error)
+            console.error("ERROR: " + error)
         } );
     }
 
@@ -30,7 +35,19 @@ export const FormContact = () => {
             <textarea name="message" placeholder='Deja tu mensaje por aquí*' required></textarea>
 
             <button type="submit">
-                <span>Enviar <i className='fa-regular fa-paper-plane'></i> </span>
+                    {
+                        isSending ? (
+                            "Enviando..."
+                        ) : (
+                            <>
+                                <span>Enviar</span>
+                                <i className='fa-regular fa-paper-plane'></i>
+                            </>
+                        )
+                    }
+                    {
+                        isSent && <Notification status='success' message='Enviado. Gracias!' />
+                    }
             </button>
             
         </form>

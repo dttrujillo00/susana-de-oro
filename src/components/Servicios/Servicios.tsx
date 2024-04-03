@@ -8,7 +8,7 @@ export const Servicios = () => {
         <article className='servicio-card'>
 
           <i className="fa-solid fa-scale-balanced fa-2xl"></i>
-          <h3>Asesoramiento Legal</h3>
+          <h3 className='mb-l-2'>Asesoramiento Legal</h3>
           <p>Estoy disponible para responder a tus consultas legales, revisar contratos y brindarte orientación en cualquier asunto legal que puedas enfrentar.</p>
 
         </article>
@@ -24,7 +24,7 @@ export const Servicios = () => {
         <article className='servicio-card'>
           
           <i className='fa-solid fa-gavel fa-2xl'></i>
-          <h3>Cumplimiento Normativo</h3>
+          <h3 className='mb-l-2'>Cumplimiento Normativo</h3>
           <p>Te ayudaré a mantener el cumplimiento de las leyes y regulaciones aplicables a tu industria, evitando posibles sanciones y riesgos legales.</p>
 
         </article>
