@@ -20,6 +20,7 @@ export const ArticlePage = () => {
   const getIdFromLocation = (path: string): string => {
     const splitedPath = path.split('/');
     const id = splitedPath[splitedPath.length - 1];
+    console.log(id)
     return id;
   }
 
