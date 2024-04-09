@@ -14,5 +14,14 @@
 
 
 .whoami p {
-    text-wrap:pretty;
+    text-wrap: balance;
+    text-align: justify;
+    text-indent: .5rem;
+    color: rgb(84, 80, 80);
+}
+
+.whoami p::first-letter {
+    font-size: 1.5rem;
+    margin-right: 3px;
+    color: rgb(84, 80, 80);
 }

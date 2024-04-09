@@ -1,20 +1,33 @@
 import React, { useEffect, useState } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useLocation } from "react-router-dom"
 
 
 
 export const Layout = () => {
 
-  const [listNavClassName, setListNavClassName] = useState('list-nav');
-  const [navClassName, setNavClassName] = useState('nav');
+  const [listNavClassName, setListNavClassName] = useState<string>('list-nav');
+  const [navClassName, setNavClassName] = useState<string>('');
+  const { pathname } = useLocation()
+
+  
 
   useEffect(() => {
-    window.addEventListener('scroll', onNavBackground );
-  
-    return () => {
-      window.removeEventListener('scroll', onNavBackground);
+
+    if(pathname.includes("article")) {
+
+      setNavClassName('nav background');
+
+    } else {
+
+      setNavClassName('nav');
+      window.addEventListener('scroll', onNavBackground );
+
+      return () => {
+        window.removeEventListener('scroll', onNavBackground);
+      }
     }
-  }, [])
+  
+  }, [pathname])
   
 
   const onShowMenu = () => {

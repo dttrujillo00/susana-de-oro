@@ -1,0 +1,41 @@
+.article-loading-splash {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.article-loading-splash h3 {
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.article-loading-splash p {
+    margin: 1rem 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.article-loading-splash h3::after,
+.article-loading-splash p::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(231,234,234);
+    background: linear-gradient(90deg, rgba(231,234,234,1) 0%, rgba(178,176,176,1) 100%);
+    background-size: 200%;
+    animation: loading-animation .5s ease-in-out infinite alternate;
+}
+
+@keyframes loading-animation {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}

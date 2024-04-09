@@ -3,11 +3,12 @@ import './ArticlesContainer.css'
 import { Article } from '../../interfaces'
 import { getArticles } from '../../services/getArticles'
 import { ArticleCard } from '../ArticleCard/ArticleCard'
+import { ArticleLoadingSplash } from '../ArticleLoadingSplash/ArticleLoadingSplash'
 
 export const ArticlesContainer = () => {
 
   const [articles, setArticles] = useState<Article[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
       loadArticles()
@@ -15,8 +16,6 @@ export const ArticlesContainer = () => {
     
 
     const loadArticles = () => {
-  
-      setIsLoading(true);
 
       getArticles()
       .then( (allArticles) => setArticles(allArticles)
@@ -29,9 +28,9 @@ export const ArticlesContainer = () => {
       {
         isLoading ? (
           <>
-            <ArticleCard id={0} title='anything' body='anything else' isLoading />
-            <ArticleCard id={1} title='anything' body='anything else' isLoading />
-            <ArticleCard id={2} title='anything' body='anything else' isLoading />
+            <ArticleLoadingSplash />
+            <ArticleLoadingSplash />
+            <ArticleLoadingSplash />
           </>
         ) : (
           articles.map( ( article ) => (
@@ -40,6 +39,12 @@ export const ArticlesContainer = () => {
               <ArticleCard {...article} />
             </div>
           ) )
+        )
+      }
+
+      {
+        (!isLoading) && (articles.length == 0) && (
+          <p className='no-articles'>Próximamente nuevos artículos sobre emprendimiento en Cuba.</p>
         )
       }
     </div>

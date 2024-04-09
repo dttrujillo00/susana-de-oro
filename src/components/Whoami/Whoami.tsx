@@ -5,9 +5,10 @@ export const Whoami = () => {
     <section className='whoami'>
 
       <h2>¿Quién soy?</h2>
-
       <p>
-          Abogada con amplia experiencia en el sector empresarial. Especializada en MIPYMES y nuevos actores económicos. En búsqueda de nuevos retos que me permitan ayudarte a conseguir tus objetivos empresariales.
+        Licenciada en Derecho por la Universidad de La Habana, actualmente me he redirigido al nuevo sector empresarial que crece en Cuba, especialmente en temas económicos y mercantiles.
+        Soy abogada especializada en Mipyme o TCP y actores económicos en general que te ofrece asesoría jurídica para concretar tus objetivos empresariales.
+        Me caracterizan la seriedad en los compromisos que asumo y la búsqueda constante de nuevos retos.
       </p>
 
     </section>
