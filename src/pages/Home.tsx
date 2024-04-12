@@ -21,23 +21,23 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="hero">
+      <div className="to-hero">
         <Hero />
       </div>
       <ContainerHomeContent>
-        <div className="servicios-container">
+        <div className="to-servicios-container">
           <Servicios />
         </div>
 
-        <div className="form-section">
+        <div className="to-form-section">
           <FormContact />
         </div>
 
-        <div className="whoami">
+        <div className="to-whoami">
           <Whoami />
         </div>
 
-        <div className="actualidad">
+        <div className="to-actualidad">
           <Actualidad />
         </div>
 

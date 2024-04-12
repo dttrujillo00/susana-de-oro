@@ -38,7 +38,6 @@ export const Layout = () => {
   const onCloseMenu = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setListNavClassName('list-nav');
-    console.log(`/${e.currentTarget.id}`)
 
     if (e.currentTarget.id) {
       navigate(`/${e.currentTarget.id}`);
@@ -68,19 +67,19 @@ export const Layout = () => {
         <ul className={ listNavClassName }>
         <i onClick={ onCloseMenu } className="fa-solid fa-xmark fa-2xl close-menu"></i>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="hero">Inicio</Link>
+            <Link onClick={ onCloseMenu } to='/' id="to-hero">Inicio</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="servicios-container">Servicios</Link>
+            <Link onClick={ onCloseMenu } to='/' id="to-servicios-container">Servicios</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="form-section">Contacto</Link>
+            <Link onClick={ onCloseMenu } to='/' id="to-form-section">Contacto</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="whoami">¿Quién soy?</Link>
+            <Link onClick={ onCloseMenu } to='/' id="to-whoami">¿Quién soy?</Link>
           </li>
           <li>
-            <Link onClick={ onCloseMenu } to='/' id="actualidad">Actualidad</Link>
+            <Link onClick={ onCloseMenu } to='/' id="to-actualidad">Actualidad</Link>
           </li>
         </ul>
 
