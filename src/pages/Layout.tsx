@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link, Outlet, useLocation } from "react-router-dom"
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
 
 
 
@@ -7,7 +7,8 @@ export const Layout = () => {
 
   const [listNavClassName, setListNavClassName] = useState<string>('list-nav');
   const [navClassName, setNavClassName] = useState<string>('');
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   
 
@@ -35,8 +36,13 @@ export const Layout = () => {
   }
 
   const onCloseMenu = (e: React.SyntheticEvent) => {
+    e.preventDefault();
     setListNavClassName('list-nav');
-    document.querySelector(`.${e.currentTarget.id}`)?.scrollIntoView({ behavior: 'smooth' })
+    console.log(`/${e.currentTarget.id}`)
+
+    if (e.currentTarget.id) {
+      navigate(`/${e.currentTarget.id}`);
+    }
   }
 
   const onNavBackground = () => {
